@@ -13,12 +13,12 @@ export function LandingPage({ onStart }: Props) {
       {/* Hero Section */}
       <section className="relative pt-20 pb-32 md:pt-32 md:pb-48">
         <div className="absolute inset-x-0 top-0 h-96 bg-brand-secondary/30 -z-10 blur-3xl opacity-50" />
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col items-center text-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="space-y-8 max-w-4xl"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-primary/20 rounded-full text-brand-dark font-bold text-sm">
               <Sparkles className="w-4 h-4" />
@@ -27,10 +27,10 @@ export function LandingPage({ onStart }: Props) {
             <h1 className="text-5xl md:text-7xl font-serif text-brand-dark leading-tight">
               Where Global <span className="italic">Heritage</span> Meets Local <span className="italic">Heart</span>.
             </h1>
-            <p className="text-xl text-gray-600 max-w-lg leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               NannyMatch AI isn't just a directory. It's a bridge. We match your family with care experts who share your language, values, and traditions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={onStart}
                 className="px-10 py-5 bg-brand-primary text-brand-dark rounded-full font-bold text-lg hover:bg-brand-primary/90 transition-all shadow-xl shadow-brand-primary/20 flex items-center justify-center gap-2 group"
@@ -41,31 +41,6 @@ export function LandingPage({ onStart }: Props) {
               <button className="px-10 py-5 bg-gray-50 text-gray-700 rounded-full font-bold text-lg hover:bg-gray-100 transition-all">
                 Our Methodology
               </button>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="aspect-[4/5] bg-gray-200 rounded-[3rem] overflow-hidden shadow-2xl relative">
-               <img 
-                src="https://images.unsplash.com/photo-1582213713374-4b51900122e2?q=80&w=2670&auto=format&fit=crop" 
-                alt="Diverse caregivers with children"
-                className="w-full h-full object-cover grayscale-[20%]"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-brand-primary/10 mix-blend-multiply" />
-            </div>
-            {/* Float Cards */}
-            <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-3xl shadow-2xl border border-gray-100 max-w-[240px]">
-              <div className="flex gap-2 mb-3">
-                {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-brand-primary text-brand-primary" />)}
-              </div>
-              <p className="text-sm font-medium italic text-gray-600">"They found someone who spoke our native dialect and understood our dietary traditions perfectly."</p>
-              <p className="text-xs font-bold mt-2 text-brand-primary">— The Lee Family</p>
             </div>
           </motion.div>
         </div>
