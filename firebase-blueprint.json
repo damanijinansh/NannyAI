@@ -1,0 +1,22 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Profiles",
+      "description": "Stored user details verified by phone number.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth UID" },
+        "phoneNumber": { "type": "string", "description": "Verified phone number" },
+        "displayName": { "type": "string", "description": "User's full name" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "phoneNumber"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "users",
+      "description": "Individual user document accessible by UID."
+    }
+  }
+}

@@ -1,0 +1,16 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    match /users/{userId} {
+      // Allow creation without auth for this simplified database tracking demo
+      allow create: if true;
+      // Allow reading, listing, or updating the document
+      allow get, list, update, delete: if true;
+    }
+  }
+}

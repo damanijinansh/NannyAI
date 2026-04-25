@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-brand-primary: #F2C3B9; /* Peach-salmon */
+  --color-brand-secondary: #F0DDD6; /* Nude-tan */
+  --color-brand-accent: #F0EEEA; /* Bone */
+  --color-brand-dark: #4A302C; /* Dark chocolate for text contrast */
+}
+
+@layer base {
+  body {
+    @apply bg-brand-secondary text-gray-900 font-sans;
+  }
+}
+
+.markdown-body {
+  @apply prose prose-slate max-w-none prose-headings:font-serif prose-headings:text-brand-primary;
+}
+
+.card-shadow {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+}
